@@ -1,24 +1,24 @@
 # DiffManager
-DiffManager allows for comparison between two binary data, which are passed to the Web API as JSON base64 encoded data.
+DiffManager allows for comparison between two binary data, which are passed to the Web API as JSON base64 encoded data.__
 The data is persisted in a in-memory data store and available for comparison.
 
 
 ## PREREQUISITES
 In order to be able to explore the solution and run the application, the following prerequisites are needed:
-- .NET Core 2.1 SDK (2.1.1) has to be installed on the machine. It can be downloaded from [here](https://www.microsoft.com/net/download/dotnet-core/2.1)
-- To use .NET Core 2.1 with Visual Studio, you'll need Visual Studio 2017 15.7 or newer. Make sure you've got the latest version of Visual Studio.
+*  .NET Core 2.1 SDK (2.1.1) has to be installed on the machine. It can be downloaded from [here](https://www.microsoft.com/net/download/dotnet-core/2.1)
+*  To use .NET Core 2.1 with Visual Studio, you'll need Visual Studio 2017 15.7 or newer. Make sure you've got the latest version of Visual Studio.
 
 
 ## USAGE
-The Web API provides REST(y) endpoints from which the difference data can be added, updated and compared.
-The ID is expressed in a form of a GUID. This guarantees that the logic for persisting the data is independent from the data store that is actually used throughout the application.
+The Web API provides REST(y) endpoints from which the difference data can be added, updated and compared.__
+The ID is expressed in a form of a GUID. This guarantees that the logic for persisting the data is independent from the data store that is actually used throughout the application.__
 
 **Insert or Update**:
-*<host>/v1/diff/<ID>/left* and *<host>/v1/diff/<ID>/right*
-These endpoints are used to add or update right and left data independently via a HTTP POST request.
+*<host>/v1/diff/<ID>/left* and *<host>/v1/diff/<ID>/right*__
+These endpoints are used to add or update right and left data independently via a HTTP POST request.__
 The body of the request is comprised of an object which contains a mandatory property 'value'. That holds the base64 encoded data.
 
-Example:
+Example:__
 URL: 
 *https://localhost:44309/v1/diff/df924786-292c-4dfc-80b4-a9fa6b2fba07/left*
 
@@ -33,9 +33,9 @@ BODY:
 ```
 
 RETURN:
-**200 OK** status code if the request was successful. No data will be returned.
-If the resource doesn't exist, it will be created and the value will be assign to the right or left field.
-If the resource already exists, the data will be updated with the new value.
+**200 OK** status code if the request was successful. No data will be returned.__
+If the resource doesn't exist, it will be created and the value will be assign to the right or left field.__
+If the resource already exists, the data will be updated with the new value.__
 **400 Bad Request** if the body doesn't contain the required fields.
 
 
