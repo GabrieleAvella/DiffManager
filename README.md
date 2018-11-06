@@ -14,7 +14,7 @@ The Web API provides REST(y) endpoints from which the difference data can be add
 The ID is expressed in a form of a GUID. This guarantees that the logic for persisting the data is independent from the data store that is actually used throughout the application.  
 
 **Insert or Update**:  
-*<host>/v1/diff/<ID>/left* and *<host>/v1/diff/<ID>/right*  
+*{host}/v1/diff/{ID}/left* and *{host}/v1/diff/{ID}/right*  
 These endpoints are used to add or update right and left data independently via a HTTP POST request.  
 The body of the request is comprised of an object which contains a mandatory property 'value'. That holds the base64 encoded data.
 
@@ -40,7 +40,7 @@ If the resource already exists, the data will be updated with the new value.
 
 
 **Create**:  
-*<host>/v1/diff*  
+*{host}/v1/diff*  
 This endpoint is used to create a new resource containing both left and right data via a HTTP POST request.  
 The body of the request is comprised of an object which contains two mandatory properties 'left' and 'right'. They hold the base64 encoded data.  
 
@@ -65,7 +65,7 @@ RETURN:
 
 
 **Full Update**:  
-*<host>/v1/diff/<ID>*  
+*{host}/v1/diff/{ID}*  
 This endpoint is used to fully update an existing resource with both left and right data via a HTTP PUT request.  
 The body of the request is comprised of an object which contains two non mandatory properties 'left' and 'right'. They hold the base64 encoded data.
 
@@ -89,7 +89,7 @@ RETURN:
 
 
 **Comparison**:  
-*<host>/v1/diff/<ID>*  
+*{host}/v1/diff/{ID}*  
 This endpoint is used to compare the left and right data of a resource via a HTTP GET request.  
 
 Example:  
@@ -137,7 +137,7 @@ If left and right data
 
 ## AREAS OF IMPROVEMENT:
 *  BSON support for Web APIs to improve performance.
-*  partial updates capability using HTTP PATCH request. This would make <host>/v1/diff/<ID>/left and <host>/v1/diff/<ID>/right endpoints deprecated.
+*  partial updates capability using HTTP PATCH request. This would make {host}/v1/diff/{ID}/left and {host}/v1/diff/{ID}/right endpoints deprecated.
 *  delete capability using HTTP DELETE request.
-*  to be more REST compliant, the comparison should be done from an endpoint that looks like <host>/v1/diff/<ID>/comparison, which should be implemented in a separate controller.
+*  to be more REST compliant, the comparison should be done from an endpoint that looks like {host}/v1/diff/{ID}/comparison, which should be implemented in a separate controller.
 *  Add Swagger documentation.
