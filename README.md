@@ -1,6 +1,5 @@
 # DiffManager
-DiffManager allows for comparison between two binary data, which are passed to the Web API as JSON base64 encoded data.
-
+DiffManager allows for comparison between two binary data, which are passed to the Web API as JSON base64 encoded data.  
 The data is persisted in a in-memory data store and available for comparison.
 
 
