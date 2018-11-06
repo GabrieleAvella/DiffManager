@@ -10,33 +10,33 @@ In order to be able to explore the solution and run the application, the followi
 
 
 ## USAGE
-The Web API provides REST(y) endpoints from which the difference data can be added, updated and compared.__
-The ID is expressed in a form of a GUID. This guarantees that the logic for persisting the data is independent from the data store that is actually used throughout the application.__
+The Web API provides REST(y) endpoints from which the difference data can be added, updated and compared.  
+The ID is expressed in a form of a GUID. This guarantees that the logic for persisting the data is independent from the data store that is actually used throughout the application.  
 
 **Insert or Update**:
-*<host>/v1/diff/<ID>/left* and *<host>/v1/diff/<ID>/right*__
-These endpoints are used to add or update right and left data independently via a HTTP POST request.__
+*<host>/v1/diff/<ID>/left* and *<host>/v1/diff/<ID>/right*  
+These endpoints are used to add or update right and left data independently via a HTTP POST request.  
 The body of the request is comprised of an object which contains a mandatory property 'value'. That holds the base64 encoded data.
 
-Example:__
-URL: 
+Example:  
+URL:  
 *https://localhost:44309/v1/diff/df924786-292c-4dfc-80b4-a9fa6b2fba07/left*
 
-METHOD:
+METHOD:  
 HTTP POST
 
-BODY:
+BODY:  
 ```
 {
 	value: 'Q2lhbzAwbW9uZG8w'
 }
 ```
 
-RETURN:
-**200 OK** status code if the request was successful. No data will be returned.__
-If the resource doesn't exist, it will be created and the value will be assign to the right or left field.__
-If the resource already exists, the data will be updated with the new value.__
-**400 Bad Request** if the body doesn't contain the required fields.
+RETURN:  
+**200 OK** status code if the request was successful. No data will be returned.  
+If the resource doesn't exist, it will be created and the value will be assign to the right or left field.  
+If the resource already exists, the data will be updated with the new value.  
+**400 Bad Request** if the body doesn't contain the required fields.  
 
 
 **Create**:
